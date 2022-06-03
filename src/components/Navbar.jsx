@@ -9,6 +9,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { useNavigate } from "react-router-dom";
+import cwlogo from "../assets/cwlogo.jpeg";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -21,7 +22,7 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: "#046582" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -30,10 +31,11 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <img src={cwlogo} alt="logo" style={{ width: "40px" }} />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+            --- <span style={{ color: "wheat" }}> {"<Clarusway IT />"} </span>
+            BLOG---
           </Typography>
           <div>
             <IconButton
@@ -44,7 +46,7 @@ export default function Navbar() {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle sx={{ fontSize: "40px" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
